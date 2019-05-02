@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 3-q</title>
+</head>
+<body>
+    <h1>標準のイベントをキャンセルする</h1>
+    <form id="join_form" action="thanks.html">
+        <div>
+            <label>メールアドレス： <input id="email_input" name="email" type="text" /></label>
+        </div>
+        <div>
+            <input type="submit" value="送信する" />
+        </div>
+    </form>
+
+    <script>
+	var btn = document.getElementById('join_form');
+	btn.addEventListener('keydown', function(e){
+		alert('入力しないでください');
+		e.preventDefault();
+		}, false);
+    </script>
+
+</body>
+</html>

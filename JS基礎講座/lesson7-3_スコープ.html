@@ -1,0 +1,33 @@
+﻿
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 7-3</title>
+</head>
+<body>
+
+<h1>Lesson 7-3</h1>
+
+
+    <script>
+    var tax = 8;
+    var price = 1000;
+
+    // 消費税を加算する
+    var addTax = function(x) {
+        var sum = x + x * tax / 100;
+        return sum;
+    }
+
+    // 指定した割引率で割引する
+    var discount = function(rate) {
+        return sum * (1 - rate / 100);
+    }
+
+    document.write(price + 'の税込価格は' + addTax(price) + 'です');
+    document.write('<br>
+10%割引で' + discount(10) + 'です');
+    </script>
+</body>
+</html>

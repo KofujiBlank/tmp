@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 6-4</title>
+</head>
+<body>
+    <h1>Lesson 6-4</h1>
+<p><label><input type="checkbox" name="items" value="123-5">JavaScript入門</label></p>
+<p><label><input type="checkbox" name="items" value="789-0">PHP入門</label></p>
+<p><label><input type="checkbox" name="items" value="543-2">Python入門</label></p>
+
+
+
+
+
+
+</body>
+<script>
+
+var item = { '123-5':'JavaScript入門', '789-0': 'PHP入門', '543-2': 'Python入門' };
+console.log(item);
+
+for(var key in item) {
+	document.write('<p><label><input type="checkbox" name="items" value="' + key + '">' + item[key]+'</label></p>');
+}
+
+
+</script>
+
+</html>

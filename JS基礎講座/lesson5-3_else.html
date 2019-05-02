@@ -1,0 +1,29 @@
+﻿
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 5-3</title>
+</head>
+<body>
+    <h1>Lesson 5-3</h1>
+
+    <form id="join_form" action="thanks.html">
+        <div>
+            <label>メールアドレス： <input id="email" type="text" name="email" class="form-control"></label>
+        </div>
+        <div>
+            <input type="submit" value="送信する">
+        </div>
+    </form>
+
+    <script>
+    var element = document.getElementById('email');
+    element.addEventListener('blur', function() {
+        if (element.value === '') {
+            element.style.backgroundColor = '#fcc';
+        }
+    });
+    </script>
+</body>
+</html>

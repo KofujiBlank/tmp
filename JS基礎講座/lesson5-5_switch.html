@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 5-5</title>
+</head>
+<body>
+    <h1>Lesson 5-5</h1>
+
+    <h2>MENU</h2>
+    <p>移動先を選んでください</p>
+    <select name="to">
+        <option value="">▼ 移動先</option>
+        <option value="Yahoo">Yahoo! JAPAN</option>
+        <option value="Google">Google</option>
+        <option value="Facebook">Facebook</option>
+        <option value="Twitter">Twitter</option>
+    </select>
+</body>
+
+<script>
+element.addEventListener('change', function() {
+    switch (element.value) {
+        case 'Yahoo':
+            location.href = 'http://yahoo.co.jp';
+            break;
+        case 'Google':
+            location.href = 'http://google.co.jp';
+            break;
+        case 'Facebook':
+            location.href = 'http://facebook.com';
+            break;
+        case 'Twitter':
+            location.href = 'http://twitter.com';
+            break;
+    }
+});
+</script>
+
+</html>

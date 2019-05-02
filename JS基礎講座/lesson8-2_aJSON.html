@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 8-2</title>
+</head>
+<body>
+
+    <div id="output"> //ここにjsonデータが挿入されるように作成
+
+    </div> 
+
+</body>
+
+<script>
+var xhr= new XMLHttpRequest();
+xhr.open('GET', 'wikipedia.json');
+xhr.responseType = 'json';
+xhr.onreadystatechange = function() {
+	if (xhr.readyState === xhr.DONE) {
+
+        var json = xhr.response.query.search;
+        var html = '';
+        for (var i=0; i<json.length; i++) {
+            html += '<h2><a href="https://ja.wikipedia.org/wiki/' + json[i].title + '">' + json[i].title + '</a></h2>';
+            html += '<div class="excerpt"><p>' + json[i].snippet + '</p></div>';
+        }
+        document.getElementById('output').innerHTML = html;
+
+	}
+}
+xhr.send(null);
+</script>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 3-3</title>
+</head>
+<body>
+    <h1>Lesson 3-3</h1>
+
+    <form id="join_form" action="thanks.html">
+        <div>
+            <label>メールアドレス： <input id="email_input" type="text" name="email"></label>
+        </div>
+        <div>
+            <input type="submit" value="送信する">
+        </div>
+    </form>
+
+    <script>
+         var btn = document.getElementById('join_form');
+          btn.addEventListener('submit', function() {
+              alert('送信をキャンセルします');
+        }, false);
+	</script>
+</body>
+</html>
+

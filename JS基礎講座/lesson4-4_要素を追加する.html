@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 4-4</title>
+</head>
+<body>
+    <h1>Lesson 4-4</h1>
+
+    <ul id="list01">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <button id="add">追加する</button>
+
+
+<script>
+	var a = 3
+        document.getElementById('add').addEventListener('click', function() {
+            var li = document.createElement('li');
+            a = a +1
+            li.innerHTML = a;
+            document.getElementById('list01').appendChild(li);
+        });
+</script>
+
+</body>
+</html>

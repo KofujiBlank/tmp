@@ -1,0 +1,6 @@
+MicroSoftのAzure Machine Learning Studio アルゴリズム チート シートを自分用に和訳してあります。
+特段英語が得意なわけではなく厳密には違うかもしれないので、正確には原本をご確認ください。
+チートシート
+https://docs.microsoft.com/ja-jp/azure/machine-learning/studio/algorithm-cheat-sheet?view=azuremgmtkeyvault-fluent-1.0.0
+アルゴリズムの選択
+https://docs.microsoft.com/ja-jp/azure/machine-learning/studio/algorithm-choice?view=azuremgmtkeyvault-fluent-1.0.0

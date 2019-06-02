@@ -58,3 +58,116 @@ class Player:
 
 player1 = Player("戦士", "剣")
 player1.walk()
+
+
+#継承
+class Box:
+    def __init__(self, item):
+        self.item = item
+
+    def open(self):
+        print("宝箱を開いた。" + self.item + "を手に入れた。")
+
+class JewelryBox(Box):
+    def look(self):
+        print("宝箱はキラキラと輝いている。")
+
+box = Box("鋼鉄の剣")
+box.open()
+
+jewelrybox = JewelryBox("魔法の指輪")
+jewelrybox.look()
+jewelrybox.open() #定義されていないものがあるとスーパークラスから呼び出される
+
+#スーパークラスで定義したメソッドと同じ名前メソッドをサブクラスで作るとオーバーライドされる
+
+
+class Greeting:
+    def __init__(self):
+        self.msg = "hello"
+        self.target = "paiza"
+
+    def say_hello(self):
+        print(self.msg + " " + self.target)
+
+class Hello(Greeting):
+    def say_hello(self, target):
+        print(self.msg, target)
+
+player = Hello()
+player.say_hello("python")
+
+
+
+player = Hello()
+player.say_hello("python")
+
+class Player:
+    def __init__(self, name):
+        self.name = name
+
+    def attack(self, enemy):
+        print(self.name + "は、" + enemy + "を攻撃した！")
+
+class Wizard(Player):
+    def __init__(self):
+        super().__init__("魔法使い")
+
+    def attack(self, enemy):
+        self.__spell()
+        print(self.name + "は、" + enemy + "に炎を放った！")
+
+    def __spell(self):
+        print("ズバーン！")
+
+print("=== パーティーでスライムと戦う ===")
+hero = Player("勇者")
+# hero.attack("スライム")
+warrior = Player("戦士")
+wizard = Wizard()
+
+party = [hero, warrior, wizard]
+for member in party:
+    member.attack("スライム")
+
+wizard._Wizard__spell()
+
+#clsはクラスメゾットのことselfとかと一緒
+#pythonは関数もオブジェクト
+class Player:
+    __charactor_count = 0
+
+    #@classmethod
+    def summary(cls):
+        print(str(Player.__charactor_count) + "人で、スライムを攻撃した。")
+    def __init__(self, name):
+        self.name = name
+        Player.__charactor_count += 1
+        print(str(Player.__charactor_count) + "番目のプレイヤー、" + self.name + "が登場した。")
+
+    def attack(self, enemy):
+        print(self.name + "は、" + enemy + "を攻撃した！")
+    summary = classmethod(summary)#@classmethod で代用できる
+    #渡した関数をクラスメゾットにして返してくれる    
+    
+class Wizard(Player):
+    def __init__(self):
+        super().__init__("魔法使い")
+
+    def attack(self, enemy):
+        self.__spell()
+        print(self.name + "は、" + enemy + "に炎を放った！")
+
+    def __spell(self):
+        print("ズバーン！")
+
+print("=== パーティーでスライムと戦う ===")
+hero = Player("勇者")
+warrior = Player("戦士")
+wizard = Wizard()
+
+party = [hero, warrior, wizard]
+for member in party:
+    member.attack("スライム")
+
+Player.summary()
